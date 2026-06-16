@@ -1,21 +1,16 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
 # Virtual environment
 venv/
+env/
 backend/venv/
 .env
 .env/
 
 # IDE
 .vscode/
-.idea/
-
-# Logs
-*.log
 
 # OS
 .DS_Store
