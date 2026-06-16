@@ -1,6 +1,28 @@
-venv/
-backend/venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+backend/venv/
 .env
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# FastAPI / uvicorn cache
+*.sqlite3
+
+# Node
 node_modules/
