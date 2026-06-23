@@ -1,7 +1,5 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, UploadFile, File, Form
 from pydantic import BaseModel
-from fastapi import UploadFile
-from fastapi import File
 
 from app.schemas.benchmark import BenchmarkResult
 from app.database.session import SessionLocal
@@ -48,9 +46,7 @@ async def compare(request: BenchmarkRequest):
 
 
 @router.post("/save")
-async def save_benchmark(
-    benchmark: BenchmarkResult
-):
+async def save_benchmark(benchmark: BenchmarkResult):
 
     db = SessionLocal()
 
@@ -100,15 +96,14 @@ async def list_benchmarks():
     result = []
 
     for item in benchmarks:
-        result.append(
-            {
-                "openvino_version": item.openvino_version,
-                "model": item.model,
-                "hardware": item.hardware,
-                "fps": item.fps,
-                "latency": item.latency
-            }
-        )
+        result.append({
+            "id": item.id,
+            "openvino_version": item.openvino_version,
+            "model": item.model,
+            "hardware": item.hardware,
+            "fps": item.fps,
+            "latency": item.latency
+        })
 
     db.close()
 
@@ -119,9 +114,7 @@ async def list_benchmarks():
 
 
 @router.post("/version-compare")
-async def version_compare(
-    request: VersionCompareRequest
-):
+async def version_compare(request: VersionCompareRequest):
 
     db = SessionLocal()
 
@@ -169,6 +162,7 @@ async def version_compare(
     return {
         "success": True,
         "old": {
+            "id": old_benchmark.id,
             "openvino_version": old_benchmark.openvino_version,
             "model": old_benchmark.model,
             "hardware": old_benchmark.hardware,
@@ -176,6 +170,7 @@ async def version_compare(
             "latency": old_benchmark.latency
         },
         "new": {
+            "id": new_benchmark.id,
             "openvino_version": new_benchmark.openvino_version,
             "model": new_benchmark.model,
             "hardware": new_benchmark.hardware,
@@ -184,7 +179,7 @@ async def version_compare(
         },
         "comparison": comparison
     }
-from fastapi import UploadFile, File, Form
+
 
 @router.post("/upload-report")
 async def upload_report(
@@ -193,6 +188,7 @@ async def upload_report(
     hardware: str = Form(...),
     openvino_version: str = Form(...)
 ):
+
     content = await file.read()
 
     report_text = content.decode("utf-8")
@@ -225,6 +221,7 @@ async def upload_report(
 
     db.add(new_benchmark)
     db.commit()
+
     db.close()
 
     return {
