@@ -4,7 +4,7 @@ from .routes import repository, benchmark
 from .database.connection import engine
 from .database.connection import Base
 from .database import benchmark_model
-
+from .routes.intel_data import router as intel_router
 # Create FastAPI app
 Base.metadata.create_all(bind=engine)
 app = FastAPI(
@@ -25,7 +25,10 @@ app.add_middleware(
 # Include routes
 app.include_router(repository.router)
 app.include_router(benchmark.router)
-
+app.include_router(
+    intel_router,
+    prefix="/benchmark"
+)
 
 @app.get("/")
 async def root():

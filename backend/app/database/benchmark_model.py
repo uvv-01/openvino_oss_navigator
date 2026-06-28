@@ -12,8 +12,15 @@ class Benchmark(Base):
     id = Column(Integer, primary_key=True, index=True)
 
     openvino_version = Column(String)
+
+    sheet = Column(String)
+
     model = Column(String)
+
     hardware = Column(String)
 
+    precision = Column(String)
+
     fps = Column(Float)
+
     latency = Column(Float)

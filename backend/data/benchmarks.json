@@ -1,0 +1,1514 @@
+[
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "bert-base-cased",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "efficientdet-d0",
+        "fp32": 12.72877712011011,
+        "int8": 15.43713606528346,
+        "latency": 66.372783
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "mobilenet-v2",
+        "fp32": 182.7013941362777,
+        "int8": 296.0504843848778,
+        "latency": 3.820057
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "resnet-50",
+        "fp32": 20.1651067896651,
+        "int8": 48.69632651425621,
+        "latency": 21.903148
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "ssd-resnet34-1200",
+        "fp32": 0.3164544290647379,
+        "int8": 0.8196853101213464,
+        "latency": 1223.75339
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 49.22244156474918,
+        "int8": 105.9122167106247,
+        "latency": 9.721013
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "yolov11",
+        "fp32": 15.38541730712447,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Processor N100",
+        "model": "yolo_v8n",
+        "fp32": 12.80600967237622,
+        "int8": 23.61630622756408,
+        "latency": 43.431048
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "bert-base-cased",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "efficientdet-d0",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "mobilenet-v2",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "resnet-50",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "ssd-resnet34-1200",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "yolov11",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x7425E",
+        "model": "yolo_v8n",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "bert-base-cased",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "efficientdet-d0",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "mobilenet-v2",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "resnet-50",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "ssd-resnet34-1200",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "yolov11",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Atom x6425E",
+        "model": "yolo_v8n",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "bert-base-cased",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "efficientdet-d0",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "mobilenet-v2",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "resnet-50",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "ssd-resnet34-1200",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "yolov11",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Celeron 6305E",
+        "model": "yolo_v8n",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "bert-base-cased",
+        "fp32": 13.80648412482016,
+        "int8": 38.290513937287,
+        "latency": 28.274805
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "efficientdet-d0",
+        "fp32": 22.1268389192351,
+        "int8": 54.0502988023221,
+        "latency": 20.103577
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.1399249917559227,
+        "int8": 0.5274640817485642,
+        "latency": 1784.453542
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "mobilenet-v2",
+        "fp32": 314.7794330647749,
+        "int8": 969.4638604543675,
+        "latency": 1.203469
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "resnet-50",
+        "fp32": 45.34544747532144,
+        "int8": 174.8744222500262,
+        "latency": 6.396173999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "ssd-resnet34-1200",
+        "fp32": null,
+        "int8": 2.631170650354093,
+        "latency": 320.713694
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 100.0698692474138,
+        "int8": 385.9915000522163,
+        "latency": 2.810558
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "yolov11",
+        "fp32": 31.93059347212246,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185GRE",
+        "model": "yolo_v8n",
+        "fp32": 27.78909706388951,
+        "int8": 77.30949844224435,
+        "latency": 13.19629
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "bert-base-cased",
+        "fp32": 30.07,
+        "int8": 75.65,
+        "latency": 24.61
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "efficientdet-d0",
+        "fp32": 66.54,
+        "int8": 97.0,
+        "latency": 20.2
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.31,
+        "int8": 1.21,
+        "latency": 973.29
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "mobilenet-v2",
+        "fp32": 810.96,
+        "int8": 1955.91,
+        "latency": 1.36
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "resnet-50",
+        "fp32": 94.25,
+        "int8": 389.02,
+        "latency": 6.25
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "ssd-resnet34-1200",
+        "fp32": 1.64,
+        "int8": 6.31,
+        "latency": 199.13
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 241.47,
+        "int8": 678.11,
+        "latency": 2.67
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "yolov11",
+        "fp32": 77.9,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core Ultra 7-155H",
+        "model": "yolo_v8n",
+        "fp32": 64.3,
+        "int8": 166.07,
+        "latency": 12.57
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "bert-base-cased",
+        "fp32": 26.04182236160296,
+        "int8": 73.65725653351136,
+        "latency": 19.7325
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "efficientdet-d0",
+        "fp32": 60.94632581007885,
+        "int8": 92.68750934085094,
+        "latency": 13.551
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.2553745489127812,
+        "int8": 1.115445722861951,
+        "latency": 1258.5543
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "mobilenet-v2",
+        "fp32": 775.1652169189024,
+        "int8": 1664.097078533393,
+        "latency": 1.0181
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "resnet-50",
+        "fp32": 84.22449188082551,
+        "int8": 330.3742365629498,
+        "latency": 4.616
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "ssd-resnet34-1200",
+        "fp32": 1.483948144514136,
+        "int8": 6.043998035917434,
+        "latency": 235.8164
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 225.1701654888431,
+        "int8": 664.5219064930855,
+        "latency": 2.2571
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "yolov11",
+        "fp32": 71.89456482332248,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122Ultra 9-288V",
+        "model": "yolo_v8n",
+        "fp32": 58.6998541355212,
+        "int8": 139.6629920673786,
+        "latency": 9.4948
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "bert-base-cased",
+        "fp32": 18.21529128513568,
+        "int8": 50.33594294545402,
+        "latency": 22.718734
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "efficientdet-d0",
+        "fp32": 41.12857353837527,
+        "int8": 73.029379938754,
+        "latency": 14.663077
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.1965594082627948,
+        "int8": 0.7201894765650935,
+        "latency": 1367.220463
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "mobilenet-v2",
+        "fp32": 503.4239226012779,
+        "int8": 1279.858434652555,
+        "latency": 0.959283
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "resnet-50",
+        "fp32": 60.83997421140002,
+        "int8": 224.4386468016595,
+        "latency": 4.955204999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "ssd-resnet34-1200",
+        "fp32": 1.010818931484232,
+        "int8": 3.93208091540411,
+        "latency": 250.498203
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 146.5125890412283,
+        "int8": 492.3631073024418,
+        "latency": 2.20656
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "yolov11",
+        "fp32": 48.14939498249496,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1185G7",
+        "model": "yolo_v8n",
+        "fp32": 40.01258647817688,
+        "int8": 110.1728592456676,
+        "latency": 10.183413
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "bert-base-cased",
+        "fp32": 34.69285519708074,
+        "int8": 87.91571050554558,
+        "latency": 16.288598
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "efficientdet-d0",
+        "fp32": 61.66383450132196,
+        "int8": 115.7050227587732,
+        "latency": 11.658286
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.3602656124170562,
+        "int8": 1.270628099555574,
+        "latency": 890.3838979999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "mobilenet-v2",
+        "fp32": 970.6103429169393,
+        "int8": 1984.094621593164,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "resnet-50",
+        "fp32": 109.9530447978907,
+        "int8": 429.3767927448328,
+        "latency": 3.478732
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "ssd-resnet34-1200",
+        "fp32": 1.969908632203275,
+        "int8": 7.122547391321385,
+        "latency": 158.859914
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 290.1849490173563,
+        "int8": 850.5119426570978,
+        "latency": 1.709337
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "yolov11",
+        "fp32": 90.9861835377739,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-12700H",
+        "model": "yolo_v8n",
+        "fp32": 77.63658378864379,
+        "int8": 206.0170573578081,
+        "latency": 6.476229999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "bert-base-cased",
+        "fp32": 12.08663840174233,
+        "int8": 31.71374595229457,
+        "latency": 46.543466
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "efficientdet-d0",
+        "fp32": 22.34145050727707,
+        "int8": 43.74616051230345,
+        "latency": 33.347834
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": null,
+        "int8": 0.4628335284954474,
+        "latency": 2376.039666
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "mobilenet-v2",
+        "fp32": 283.8941896924652,
+        "int8": 758.8118353424576,
+        "latency": 1.990206
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "resnet-50",
+        "fp32": 39.19538745340031,
+        "int8": 151.4453762522568,
+        "latency": 11.401871
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "ssd-resnet34-1200",
+        "fp32": 0.7582769802023965,
+        "int8": 2.641885632743973,
+        "latency": 506.823145
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 94.20672010915496,
+        "int8": 312.975652128765,
+        "latency": 4.813009999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "yolov11",
+        "fp32": 31.35326174308056,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1235U",
+        "model": "yolo_v8n",
+        "fp32": 27.07684614690659,
+        "int8": 67.82113300305724,
+        "latency": 20.657651
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "bert-base-cased",
+        "fp32": 15.70892489212855,
+        "int8": 39.90176291311445,
+        "latency": 40.170482
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "efficientdet-d0",
+        "fp32": 35.64209361547785,
+        "int8": 56.09006045942088,
+        "latency": 28.712215
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.1599974090574235,
+        "int8": 0.5753077887159074,
+        "latency": 2072.233979
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "mobilenet-v2",
+        "fp32": 456.569268413547,
+        "int8": 949.0651510973057,
+        "latency": 1.75033
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "resnet-50",
+        "fp32": 52.94477558833825,
+        "int8": 184.1833207984309,
+        "latency": 9.621369
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "ssd-resnet34-1200",
+        "fp32": 0.9144669763162296,
+        "int8": 3.143083721725926,
+        "latency": 466.619963
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 133.9015607946646,
+        "int8": 381.8602445474538,
+        "latency": 4.165924
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "yolov11",
+        "fp32": 43.41878297484265,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-1335U",
+        "model": "yolo_v8n",
+        "fp32": 36.14975656280897,
+        "int8": 91.2622328027485,
+        "latency": 18.184279
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "bert-base-cased",
+        "fp32": 17.86945883031212,
+        "int8": 44.38939467896694,
+        "latency": 37.677256
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "efficientdet-d0",
+        "fp32": 39.30579263086702,
+        "int8": 61.43038818061126,
+        "latency": 27.059592
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.1775845598133675,
+        "int8": 0.6322810278290332,
+        "latency": 1970.655415
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "mobilenet-v2",
+        "fp32": 515.9575695603519,
+        "int8": 1035.640087780643,
+        "latency": 1.617227
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "resnet-50",
+        "fp32": 58.72294047293497,
+        "int8": 200.9925949473531,
+        "latency": 9.028675999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "ssd-resnet34-1200",
+        "fp32": 1.027751546294254,
+        "int8": 3.435289393973708,
+        "latency": 445.788099
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 150.8919606520107,
+        "int8": 418.1363859221994,
+        "latency": 3.885565
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "yolov11",
+        "fp32": 48.48916152128958,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i7-1355U",
+        "model": "yolo_v8n",
+        "fp32": 40.52079273126118,
+        "int8": 100.4527605007281,
+        "latency": 17.116701
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "bert-base-cased",
+        "fp32": 47.12211385018382,
+        "int8": 120.4737325608777,
+        "latency": 13.361571
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "efficientdet-d0",
+        "fp32": 92.81208136175097,
+        "int8": 149.821922392178,
+        "latency": 9.241761
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.4941837177474757,
+        "int8": 1.616049832960834,
+        "latency": 736.1426339999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "mobilenet-v2",
+        "fp32": 1318.695012382306,
+        "int8": 2964.940969599671,
+        "latency": 0.6923119999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "resnet-50",
+        "fp32": 148.8015880014332,
+        "int8": 536.1706193157534,
+        "latency": 2.823836
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "ssd-resnet34-1200",
+        "fp32": 2.465956266645463,
+        "int8": 8.770979736819601,
+        "latency": 133.513386
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 378.1117909556818,
+        "int8": 1076.912196241082,
+        "latency": 1.353098
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "yolov11",
+        "fp32": 123.403471970229,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122 i5-13600K",
+        "model": "yolo_v8n",
+        "fp32": 102.2483369351225,
+        "int8": 266.6833317582685,
+        "latency": 5.230693
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "bert-base-cased",
+        "fp32": 67.83547133528872,
+        "int8": 169.9186716591569,
+        "latency": 10.73981
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "efficientdet-d0",
+        "fp32": 126.8166350249828,
+        "int8": 222.1992473510995,
+        "latency": 7.316149999999999
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.7141115342210489,
+        "int8": 2.496885639301787,
+        "latency": 563.358024
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "mobilenet-v2",
+        "fp32": 2049.210542705789,
+        "int8": 4254.409310088156,
+        "latency": 0.597514
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "resnet-50",
+        "fp32": 233.7687611272633,
+        "int8": 762.9288588429291,
+        "latency": 2.180794
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "ssd-resnet34-1200",
+        "fp32": 3.840823878032216,
+        "int8": 13.03004750491674,
+        "latency": 102.758404
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 590.498347681328,
+        "int8": 1607.472085737564,
+        "latency": 1.095321
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "yolov11",
+        "fp32": 185.4843708749779,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "yolo_v8n",
+        "fp32": 155.3627217420393,
+        "int8": 389.4647568272376,
+        "latency": 4.066784
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "bert-base-cased",
+        "fp32": 80.48096978123635,
+        "int8": 220.4316910288401,
+        "latency": 14.257459
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "efficientdet-d0",
+        "fp32": 167.4019494822194,
+        "int8": 271.8231634023749,
+        "latency": 11.273116
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 0.9135213840070715,
+        "int8": 3.276480529100477,
+        "latency": 636.875403
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "mobilenet-v2",
+        "fp32": 1935.826571846267,
+        "int8": 5423.437116466524,
+        "latency": 1.499188
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "resnet-50",
+        "fp32": 269.1815771971699,
+        "int8": 974.8440183571117,
+        "latency": 3.106355
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "ssd-resnet34-1200",
+        "fp32": 4.591200141442978,
+        "int8": 17.65031227409462,
+        "latency": 116.164586
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 639.427762150075,
+        "int8": 2101.226683833437,
+        "latency": 1.604238
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "yolov11",
+        "fp32": 206.7470756268532,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 5218T",
+        "model": "yolo_v8n",
+        "fp32": 173.8607422454968,
+        "int8": 440.6809226028929,
+        "latency": 6.001755999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "bert-base-cased",
+        "fp32": 163.8105964261179,
+        "int8": 425.0397055652662,
+        "latency": 11.113412
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "efficientdet-d0",
+        "fp32": 254.3160160120813,
+        "int8": 411.7606623181539,
+        "latency": 8.599058
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 1.641878942079125,
+        "int8": 6.563689325860514,
+        "latency": 324.407793
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "mobilenet-v2",
+        "fp32": 3324.771146419404,
+        "int8": 10309.85122015341,
+        "latency": 1.178663
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "resnet-50",
+        "fp32": 569.5641845318946,
+        "int8": 2132.355755242725,
+        "latency": 1.853516
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "ssd-resnet34-1200",
+        "fp32": 10.88077121830188,
+        "int8": 41.73527169597001,
+        "latency": 49.595052
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 1243.881230647786,
+        "int8": 4373.098269800682,
+        "latency": 1.280229
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "yolov11",
+        "fp32": 383.5089610960461,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Silver 6238L",
+        "model": "yolo_v8n",
+        "fp32": 338.3790629005659,
+        "int8": 736.968752535698,
+        "latency": 4.225614999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "bert-base-cased",
+        "fp32": 241.0691805767555,
+        "int8": 622.8957640984488,
+        "latency": 6.674747
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "efficientdet-d0",
+        "fp32": 422.1161861369707,
+        "int8": 722.6901268585558,
+        "latency": 4.914021
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 2.432188081159151,
+        "int8": 10.35949048466988,
+        "latency": 226.015382
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "mobilenet-v2",
+        "fp32": 5183.136173750121,
+        "int8": 16483.42653110166,
+        "latency": 0.5960139999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "resnet-50",
+        "fp32": 826.7279349962879,
+        "int8": 3360.268843306036,
+        "latency": 1.351059
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "ssd-resnet34-1200",
+        "fp32": 15.05344054487449,
+        "int8": 60.79934263145409,
+        "latency": 36.895911
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 1758.946879687384,
+        "int8": 6964.979880186733,
+        "latency": 0.7723519999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "yolov11",
+        "fp32": 570.4159021200105,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Gold 6338N",
+        "model": "yolo_v8n",
+        "fp32": 494.950582959639,
+        "int8": 1225.710159576722,
+        "latency": 3.023973
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "bert-base-cased",
+        "fp32": 225.8535838574069,
+        "int8": 590.9109804559811,
+        "latency": 9.060630999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "efficientdet-d0",
+        "fp32": 344.0517688508187,
+        "int8": 583.6918962407345,
+        "latency": 6.881705999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 2.266764159712348,
+        "int8": 8.614983022265841,
+        "latency": 251.676373
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "mobilenet-v2",
+        "fp32": 4631.522674016119,
+        "int8": 14974.10201267526,
+        "latency": 0.9325469999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "resnet-50",
+        "fp32": 758.4442880577379,
+        "int8": 2951.097900598347,
+        "latency": 1.583451
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "ssd-resnet34-1200",
+        "fp32": 14.99031824014733,
+        "int8": 57.90856666082593,
+        "latency": 37.30035
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 1659.322272016275,
+        "int8": 6130.794176804564,
+        "latency": 1.190376
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "yolov11",
+        "fp32": 512.6864004915866,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8280",
+        "model": "yolo_v8n",
+        "fp32": 451.7716243423641,
+        "int8": 1008.457110413637,
+        "latency": 3.603153
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "bert-base-cased",
+        "fp32": 337.0708088490458,
+        "int8": 877.5093767340531,
+        "latency": 5.181795
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "efficientdet-d0",
+        "fp32": 577.3327983905322,
+        "int8": 1004.959862528275,
+        "latency": 4.325607
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "mask_rcnn_resnet50_atrous_coco",
+        "fp32": 3.406514090692474,
+        "int8": 14.28399626206394,
+        "latency": 172.986705
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "mobilenet-v2",
+        "fp32": 6937.812361208849,
+        "int8": 22593.46256050591,
+        "latency": 0.579759
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "resnet-50",
+        "fp32": 1145.824794569154,
+        "int8": 4874.832992330409,
+        "latency": 1.07503
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "ssd-resnet34-1200",
+        "fp32": 20.86641152862423,
+        "int8": 84.499312955049,
+        "latency": 26.855245
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "ssd_mobilenet_v1_coco",
+        "fp32": 2524.183128298919,
+        "int8": 10144.910837238,
+        "latency": 0.6880809999999999
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "yolov11",
+        "fp32": 803.2363682318849,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "yolo_v8n",
+        "fp32": 696.4036546822776,
+        "int8": 1701.662757014262,
+        "latency": 2.352673
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "chatGLM4-9B",
+        "fp32": 3.599016187331096,
+        "int8": 9.578896388526168,
+        "latency": 6.990258306122006
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Gemma-2-9B",
+        "fp32": 3.823301093219421,
+        "int8": 10.66691357015944,
+        "latency": 7.492625196334878
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Llama-2-7b-chat",
+        "fp32": 4.961794430971243,
+        "int8": 14.2192797792599,
+        "latency": 9.66584777604308
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Llama-3-8B",
+        "fp32": 4.482928291796314,
+        "int8": 12.04020996681357,
+        "latency": 8.705515144070617
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Llama-3.2-3B",
+        "fp32": 10.21326001846762,
+        "int8": 27.06290366012241,
+        "latency": 19.18708540306023
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Mistral-7b",
+        "fp32": 4.720891455375301,
+        "int8": 14.65444310258594,
+        "latency": 9.169025857019678
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Phi3-4k-mini-instruct",
+        "fp32": 8.594240140258,
+        "int8": 19.20570947331223,
+        "latency": 16.44337387118293
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Qwen-2-7B",
+        "fp32": 4.767304528834422,
+        "int8": 13.12471511165261,
+        "latency": 9.293655249442171
+    },
+    {
+        "hardware": "Intel\u00ae Core\u2122  i9-13900K",
+        "model": "Stable-Diffusion-v1-5",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Gemma-2-9B",
+        "fp32": 7.691073570810099,
+        "int8": 20.92957449337872,
+        "latency": 14.24422289929762
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "chatGLM4-9B",
+        "fp32": 8.49437247823317,
+        "int8": 23.50487267763044,
+        "latency": 15.51422840915861
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Llama-2-7b-chat",
+        "fp32": 10.54248129737462,
+        "int8": 26.4220548062114,
+        "latency": 19.29903213423943
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Llama-3-8B",
+        "fp32": 9.625083738228524,
+        "int8": 26.4781563153845,
+        "latency": 17.82288790312476
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Llama-3.2-3B",
+        "fp32": 19.58651304050452,
+        "int8": 49.94461142592865,
+        "latency": 34.8920544511445
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Mistral-7b",
+        "fp32": 10.1589086975192,
+        "int8": 27.1991461644036,
+        "latency": 18.7077473833006
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Phi3-4k-mini-instruct",
+        "fp32": 17.19093576967859,
+        "int8": 40.16898287716767,
+        "latency": 30.40200264071795
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Qwen-2-7B",
+        "fp32": 10.14911073491741,
+        "int8": 29.50584496035742,
+        "latency": 19.45670270761421
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8380",
+        "model": "Stable-Diffusion-v1-5",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Gemma-2-9B",
+        "fp32": 10.79635653196844,
+        "int8": 22.73736501679041,
+        "latency": 16.68704989811722
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "chatGLM4-9B",
+        "fp32": 11.29915159190357,
+        "int8": 23.17913951616791,
+        "latency": 16.85982405087621
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Llama-2-7b-chat",
+        "fp32": 14.5542717879268,
+        "int8": 28.22280436460025,
+        "latency": 20.5823911057725
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Llama-3-8B",
+        "fp32": 13.32469182652743,
+        "int8": 26.27368934357552,
+        "latency": 19.11566352761984
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Llama-3.2-3B",
+        "fp32": 27.93820516029825,
+        "int8": 48.34383683761692,
+        "latency": 38.33053648185471
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Mistral-7b",
+        "fp32": 14.07305435098029,
+        "int8": 28.78453280400497,
+        "latency": 20.01360124340502
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Phi3-4k-mini-instruct",
+        "fp32": 23.7128206684739,
+        "int8": 42.18661671771248,
+        "latency": 35.38785800126547
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Qwen-2-7B",
+        "fp32": 14.26338800822769,
+        "int8": 31.00558875737352,
+        "latency": 22.59705718524276
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8480+",
+        "model": "Stable-Diffusion-v1-5",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Gemma-2-9B",
+        "fp32": 12.28333426686674,
+        "int8": 26.69972448554303,
+        "latency": 19.39078797957297
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "chatGLM4-9B",
+        "fp32": 12.99596501278283,
+        "int8": 27.89307691041775,
+        "latency": 19.70452279882254
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Llama-2-7b-chat",
+        "fp32": 16.77744815684633,
+        "int8": 34.45805575933667,
+        "latency": 24.47105209128388
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Llama-3-8B",
+        "fp32": 15.17622480481099,
+        "int8": 31.51996853046342,
+        "latency": 22.17236888258799
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Llama-3.2-3B",
+        "fp32": 32.87174824448429,
+        "int8": 58.65498259413391,
+        "latency": 44.61789900560088
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Mistral-7b",
+        "fp32": 15.99045178143227,
+        "int8": 33.88123812886119,
+        "latency": 23.05565866558459
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Phi3-4k-mini-instruct",
+        "fp32": 27.66469832338096,
+        "int8": 50.9552582259621,
+        "latency": 41.57134703220075
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Qwen-2-7B",
+        "fp32": 16.25486060969381,
+        "int8": 37.77512092760587,
+        "latency": 26.53157496204658
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 8580",
+        "model": "Stable-Diffusion-v1-5",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Gemma-2-9B",
+        "fp32": null,
+        "int8": 119.5067459526473,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "chatGLM4-9B",
+        "fp32": null,
+        "int8": 140.98541499332399,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Llama-2-7b-chat",
+        "fp32": null,
+        "int8": 277.06310259679714,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Llama-3-8B",
+        "fp32": null,
+        "int8": 149.59574522674228,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Llama-3.2-3B",
+        "fp32": null,
+        "int8": 153.02216042233317,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Mistral-7b",
+        "fp32": null,
+        "int8": 154.87610058834252,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Phi3-4k-mini-instruct",
+        "fp32": null,
+        "int8": 225.50885908643875,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Qwen-2-7B",
+        "fp32": null,
+        "int8": 165.51626476740853,
+        "latency": null
+    },
+    {
+        "hardware": "Intel\u00ae Xeon\u00ae Platinum 6979P",
+        "model": "Stable-Diffusion-v1-5",
+        "fp32": null,
+        "int8": null,
+        "latency": null
+    }
+]
