@@ -1,6 +1,6 @@
 # OpenVINO OSS Navigator
 
-A tool that fetches GitHub repository data and provides insights like languages, activity, and performance benchmarking ideas for OpenVINO repositories.
+A tool that fetches openvino models and tell you which hardware is best and also the benchmark report 
 
 ## Features
 - GitHub repo data fetching
