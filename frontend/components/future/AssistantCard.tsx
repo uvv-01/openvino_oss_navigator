@@ -1,1 +1,0 @@
-// AssistantCard component

@@ -46,24 +46,19 @@ export default function ExplorerPage() {
   }, [selectedModel]);
 
   const loadBenchmark = async () => {
-    try {
-      const response = await fetch(
-        "http://127.0.0.1:8001/benchmark/details"
-      );
-      const data = await response.json();
+  const response = await fetch(
+    `http://127.0.0.1:8001/benchmark/details?model=${selectedModel}&version=${selectedVersion}&hardware=${encodeURIComponent(selectedHardware)}`
+  );
 
-      const result = data.find(
-        (item: any) =>
-          item.model === selectedModel &&
-          item.openvino_version === selectedVersion &&
-          item.hardware === selectedHardware
-      );
+  const data = await response.json();
 
-      setBenchmark(result || null);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  if (data.success) {
+    setBenchmark(data.benchmark);
+  } else {
+    setBenchmark(null);
+    alert(data.message);
+  }
+};
 
   return (
     <div className="p-8">
@@ -176,21 +171,33 @@ export default function ExplorerPage() {
       )}
 
       {/* Benchmark Output */}
-      {benchmark && (
-        <div className="mt-6 border rounded-lg p-4 shadow">
-          <h2 className="text-xl font-bold mb-3">
-            Benchmark Details
-          </h2>
+        {benchmark && (
+  <div className="mt-6 border rounded-lg p-4 shadow">
+    <h2 className="text-xl font-bold mb-3">
+      Benchmark Details
+    </h2>
 
-          <p>
-            <strong>FPS:</strong> {benchmark.fps}
-          </p>
+    <p>
+      <strong>Model:</strong> {benchmark.model}
+    </p>
 
-          <p>
-            <strong>Latency:</strong> {benchmark.latency}
-          </p>
-        </div>
-      )}
+    <p>
+      <strong>Version:</strong> {benchmark.openvino_version}
+    </p>
+
+    <p>
+      <strong>Hardware:</strong> {benchmark.hardware}
+    </p>
+
+    <p>
+      <strong>FPS:</strong> {benchmark.fps}
+    </p>
+
+    <p>
+      <strong>Latency:</strong> {benchmark.latency}
+    </p>
+  </div>
+)}
     </div>
   );
 }

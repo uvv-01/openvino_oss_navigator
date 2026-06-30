@@ -1,1 +1,0 @@
-// Issue page component

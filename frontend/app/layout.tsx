@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "../compnents/Navbar";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+
+        <Navbar />
+
+        <main className="max-w-7xl mx-auto">
+          {children}
+        </main>
+
+      </body>
     </html>
   );
 }

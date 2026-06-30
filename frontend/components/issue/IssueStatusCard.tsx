@@ -1,1 +1,0 @@
-// IssueStatusCard component
