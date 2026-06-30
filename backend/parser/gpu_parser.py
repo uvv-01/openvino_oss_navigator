@@ -28,8 +28,9 @@ def parse_gpu(db):
 
         row = df.iloc[i]
 
-        if str(row[0]) == "Model name":
-            current_hardware = row[4]
+        # New hardware block
+        if str(row[0]).strip() == "Model name:":
+            current_hardware = str(row[4]).strip()
             continue
 
         model = str(row[0]).strip()
@@ -37,7 +38,7 @@ def parse_gpu(db):
         if model == "":
             continue
 
-        if model == "Model name":
+        if model == "Model name:":
             continue
 
         if model.startswith("Test Date"):
@@ -47,16 +48,15 @@ def parse_gpu(db):
         int8 = to_float(row[2])
         latency = to_float(row[3])
 
-        fps = int8 if int8 is not None else fp16
-
         benchmark = Benchmark(
             openvino_version="2024.6",
             model=model,
             hardware=current_hardware,
-            fps=fps,
-            latency=latency,
+            precision="GPU/NPU",
+            fps=int8 if int8 else fp16,
+            latency=latency
         )
 
         db.add(benchmark)
 
-    print("✅ GPU parser finished")
+    print("GPU parser finished")

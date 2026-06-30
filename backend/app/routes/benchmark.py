@@ -345,11 +345,12 @@ async def best_fps():
 
     db = SessionLocal()
 
-    benchmark = db.query(
-        Benchmark
-    ).order_by(
-        Benchmark.fps.desc()
-    ).first()
+    benchmark = (
+        db.query(Benchmark)
+        .filter(Benchmark.fps != None)
+        .order_by(Benchmark.fps.desc())
+        .first()
+    )
 
     db.close()
 
@@ -371,13 +372,12 @@ async def best_latency():
 
     db = SessionLocal()
 
-    benchmark = db.query(
-        Benchmark
-    ).order_by(
-        Benchmark.latency.asc()
-    ).first()
-
-    db.close()
+    benchmark = (
+    db.query(Benchmark)
+    .filter(Benchmark.fps != None)
+    .order_by(Benchmark.fps.desc())
+    .first()
+)
 
     if benchmark is None:
         return {
@@ -397,9 +397,15 @@ async def model_summary(model: str):
 
     db = SessionLocal()
 
-    benchmarks = db.query(Benchmark).filter(
-        Benchmark.model == model
-    ).all()
+    benchmarks = (
+    db.query(Benchmark)
+    .filter(
+        Benchmark.model == model,
+        Benchmark.fps != None,
+        Benchmark.latency != None
+    )
+    .all()
+)
 
     if not benchmarks:
         db.close()
@@ -443,9 +449,12 @@ async def leaderboard():
 
     db = SessionLocal()
 
-    benchmarks = db.query(Benchmark).order_by(
-        Benchmark.fps.desc()
-    ).all()
+    benchmarks = (
+    db.query(Benchmark)
+    .filter(Benchmark.fps != None)
+    .order_by(Benchmark.fps.desc())
+    .all()
+)
 
     result = []
 
@@ -477,8 +486,14 @@ async def model_leaderboard():
 
     db = SessionLocal()
 
-    benchmarks = db.query(Benchmark).all()
-
+    benchmarks = (
+    db.query(Benchmark)
+    .filter(
+        Benchmark.fps != None,
+        Benchmark.latency != None
+    )
+    .all()
+)
     best_models = {}
 
     for benchmark in benchmarks:
@@ -527,9 +542,15 @@ async def recommend(model: str):
 
     db = SessionLocal()
 
-    benchmarks = db.query(Benchmark).filter(
-        Benchmark.model == model
-    ).all()
+    benchmarks = (
+    db.query(Benchmark)
+    .filter(
+        Benchmark.model == model,
+        Benchmark.fps != None,
+        Benchmark.latency != None
+    )
+    .all()
+)
 
     if not benchmarks:
         db.close()
@@ -560,9 +581,15 @@ async def trends(model: str):
 
     db = SessionLocal()
 
-    benchmarks = db.query(Benchmark).filter(
-        Benchmark.model == model
-    ).all()
+    benchmarks = (
+        db.query(Benchmark)
+        .filter(
+            Benchmark.model == model,
+            Benchmark.fps != None,
+            Benchmark.latency != None
+        )
+        .all()
+    )
 
     if not benchmarks:
         db.close()
@@ -604,13 +631,26 @@ async def models_comparison(
 
     db = SessionLocal()
 
-    model1_benchmarks = db.query(Benchmark).filter(
-        Benchmark.model == model1
-    ).all()
+    model1_benchmarks = (
+        db.query(Benchmark)
+        .filter(
+            Benchmark.model == model1,
+            Benchmark.fps != None,
+            Benchmark.latency != None
+        )
+        .all()
+    )
 
-    model2_benchmarks = db.query(Benchmark).filter(
-        Benchmark.model == model2
-    ).all()
+    model2_benchmarks = (
+        db.query(Benchmark)
+        .filter(
+            Benchmark.model == model2,
+            Benchmark.fps != None,
+            Benchmark.latency != None
+        )
+        .all()
+    )
+    
 
     if not model1_benchmarks:
         db.close()
