@@ -16,12 +16,16 @@ export default function Navbar() {
           <Link href="/">Dashboard</Link>
 
           <Link href="/models-comparison">
-            Compare
+            Model Compare
           </Link>
 
           <Link href="/leaderboard">
             Leaderboard
           </Link>
+
+          <Link href="/version-compare">
+            Version Compare
+         </Link>
 
           <Link href="/trends">
             Trends

@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import {
+  getModels,
+  compareModels as compareModelsAPI,
+} from "@/libs/api";
 
 export default function ModelsComparisonPage() {
   const [models, setModels] = useState<string[]>([]);
@@ -11,12 +15,12 @@ export default function ModelsComparisonPage() {
   const [comparison, setComparison] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8001/benchmark/models")
-      .then((response) => response.json())
-      .then((data) => {
-        setModels(data.models);
-      });
-  }, []);
+  getModels()
+    .then((data) => {
+      setModels(data.models || []);
+    })
+    .catch(console.error);
+}, []);
 
   const compareModels = async () => {
     if (!model1 || !model2) {
@@ -24,11 +28,13 @@ export default function ModelsComparisonPage() {
       return;
     }
 
-    const response = await fetch(
-      `http://127.0.0.1:8001/benchmark/models-comparison?model1=${model1}&model2=${model2}`
-    );
+    const data = await compareModelsAPI(model1, model2);
 
-    const data = await response.json();
+      if (data.success) {
+       setComparison(data);
+       } else {
+        alert(data.message);
+        }
 
     if (data.success) {
       setComparison(data);

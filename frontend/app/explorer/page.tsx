@@ -2,76 +2,88 @@
 
 import { useEffect, useState } from "react";
 
+import BenchmarkCard from "@/compnents/BenchmarkCard";
+
+import {
+  getModels,
+  getVersions,
+  getHardware,
+  getBenchmark,
+} from "@/libs/api";
+
 export default function ExplorerPage() {
   const [models, setModels] = useState<string[]>([]);
-  const [selectedModel, setSelectedModel] = useState("");
-
   const [versions, setVersions] = useState<string[]>([]);
-  const [selectedVersion, setSelectedVersion] = useState("");
-
   const [hardware, setHardware] = useState<string[]>([]);
+
+  const [selectedModel, setSelectedModel] = useState("");
+  const [selectedVersion, setSelectedVersion] = useState("");
   const [selectedHardware, setSelectedHardware] = useState("");
 
   const [benchmark, setBenchmark] = useState<any>(null);
 
+  // Load Models
   useEffect(() => {
-    fetch("http://127.0.0.1:8001/benchmark/models")
-      .then((res) => res.json())
-      .then((data) => {
-        setModels(data.models || []);
-      })
+    getModels()
+      .then((data) => setModels(data.models || []))
       .catch(console.error);
   }, []);
 
+  // Load Versions
   useEffect(() => {
     if (!selectedModel) return;
 
-    fetch(`http://127.0.0.1:8001/benchmark/versions/${selectedModel}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setVersions(data.versions || []);
-      })
+    getVersions(selectedModel)
+      .then((data) => setVersions(data.versions || []))
       .catch(console.error);
   }, [selectedModel]);
 
+  // Load Hardware
   useEffect(() => {
     if (!selectedModel) return;
 
-    fetch(`http://127.0.0.1:8001/benchmark/hardware/${selectedModel}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setHardware(data.hardware || []);
-      })
+    getHardware(selectedModel)
+      .then((data) => setHardware(data.hardware || []))
       .catch(console.error);
   }, [selectedModel]);
 
+  // Load Benchmark
   const loadBenchmark = async () => {
-  const response = await fetch(
-    `http://127.0.0.1:8001/benchmark/details?model=${selectedModel}&version=${selectedVersion}&hardware=${encodeURIComponent(selectedHardware)}`
-  );
+    const data = await getBenchmark(
+      selectedModel,
+      selectedVersion,
+      selectedHardware
+    );
 
-  const data = await response.json();
-
-  if (data.success) {
-    setBenchmark(data.benchmark);
-  } else {
-    setBenchmark(null);
-    alert(data.message);
-  }
-};
+    if (data.success) {
+      setBenchmark(data.benchmark);
+    } else {
+      setBenchmark(null);
+      alert(data.message);
+    }
+  };
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">Benchmark Explorer</h1>
+    <main className="min-h-screen bg-slate-950 text-white p-10">
 
-      {/* Model Selector */}
-      <div className="mb-4">
+      <h1 className="text-4xl font-bold">
+        Benchmark Explorer
+      </h1>
+
+      <p className="text-gray-400 mt-2 mb-8">
+        Explore benchmark performance for any model,
+        hardware and OpenVINO version.
+      </p>
+
+      {/* Model */}
+
+      <div className="mb-6">
         <label className="block mb-2 font-semibold">
           Select Model
         </label>
 
         <select
-          className="border rounded p-2"
+          className="w-full max-w-md rounded-lg border border-slate-700 bg-slate-900 p-3"
           value={selectedModel}
           onChange={(e) => {
             setSelectedModel(e.target.value);
@@ -81,6 +93,7 @@ export default function ExplorerPage() {
           }}
         >
           <option value="">Choose Model</option>
+
           {models.map((model) => (
             <option key={model} value={model}>
               {model}
@@ -89,15 +102,16 @@ export default function ExplorerPage() {
         </select>
       </div>
 
-      {/* Version Selector */}
+      {/* Version */}
+
       {selectedModel && (
-        <div className="mb-4">
+        <div className="mb-6">
           <label className="block mb-2 font-semibold">
             Select Version
           </label>
 
           <select
-            className="border rounded p-2"
+            className="w-full max-w-md rounded-lg border border-slate-700 bg-slate-900 p-3"
             value={selectedVersion}
             onChange={(e) => {
               setSelectedVersion(e.target.value);
@@ -105,6 +119,7 @@ export default function ExplorerPage() {
             }}
           >
             <option value="">Choose Version</option>
+
             {versions.map((version) => (
               <option key={version} value={version}>
                 {version}
@@ -114,15 +129,16 @@ export default function ExplorerPage() {
         </div>
       )}
 
-      {/* Hardware Selector */}
+      {/* Hardware */}
+
       {selectedVersion && (
-        <div className="mb-4">
+        <div className="mb-6">
           <label className="block mb-2 font-semibold">
             Select Hardware
           </label>
 
           <select
-            className="border rounded p-2"
+            className="w-full max-w-md rounded-lg border border-slate-700 bg-slate-900 p-3"
             value={selectedHardware}
             onChange={(e) => {
               setSelectedHardware(e.target.value);
@@ -130,6 +146,7 @@ export default function ExplorerPage() {
             }}
           >
             <option value="">Choose Hardware</option>
+
             {hardware.map((item) => (
               <option key={item} value={item}>
                 {item}
@@ -140,18 +157,25 @@ export default function ExplorerPage() {
       )}
 
       {/* Button */}
+
       {selectedHardware && (
         <button
           onClick={loadBenchmark}
-          className="bg-blue-600 text-white px-4 py-2 rounded mb-6"
+          className="rounded-lg bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-700 transition"
         >
           Show Benchmark
         </button>
       )}
 
-      {/* Selection Summary */}
+      {/* Current Selection */}
+
       {selectedModel && (
-        <div className="mt-4 border rounded-lg p-4">
+        <div className="mt-8 rounded-xl border border-slate-700 bg-slate-900 p-5 max-w-xl">
+
+          <h2 className="font-semibold mb-3">
+            Current Selection
+          </h2>
+
           <p>
             <strong>Model:</strong> {selectedModel}
           </p>
@@ -167,37 +191,18 @@ export default function ExplorerPage() {
               <strong>Hardware:</strong> {selectedHardware}
             </p>
           )}
+
         </div>
       )}
 
-      {/* Benchmark Output */}
-        {benchmark && (
-  <div className="mt-6 border rounded-lg p-4 shadow">
-    <h2 className="text-xl font-bold mb-3">
-      Benchmark Details
-    </h2>
+      {/* Benchmark Card */}
 
-    <p>
-      <strong>Model:</strong> {benchmark.model}
-    </p>
+      {benchmark && (
+        <div className="mt-10">
+          <BenchmarkCard benchmark={benchmark} />
+        </div>
+      )}
 
-    <p>
-      <strong>Version:</strong> {benchmark.openvino_version}
-    </p>
-
-    <p>
-      <strong>Hardware:</strong> {benchmark.hardware}
-    </p>
-
-    <p>
-      <strong>FPS:</strong> {benchmark.fps}
-    </p>
-
-    <p>
-      <strong>Latency:</strong> {benchmark.latency}
-    </p>
-  </div>
-)}
-    </div>
+    </main>
   );
 }

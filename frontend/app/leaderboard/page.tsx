@@ -1,53 +1,104 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getLeaderboard } from "@/libs/api";
 
 export default function LeaderboardPage() {
-  const [data, setData] = useState<any>(null);
+  const [leaderboard, setLeaderboard] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8001/benchmark/model-leaderboard")
-      .then((response) => response.json())
-      .then((result) => {
-        setData(result);
-      });
+    async function loadLeaderboard() {
+      try {
+        const data = await getLeaderboard();
+        setLeaderboard(data.leaderboard || []);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadLeaderboard();
   }, []);
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">
-        Benchmark Leaderboard
+    <main className="min-h-screen bg-slate-950 text-white p-10">
+
+      <h1 className="text-4xl font-bold">
+        Performance Leaderboard
       </h1>
 
-      {!data ? (
+      <p className="text-slate-400 mt-2 mb-8">
+        Top performing OpenVINO benchmarks ranked by FPS.
+      </p>
+
+      {loading ? (
         <p>Loading...</p>
       ) : (
-        <table className="border-collapse border w-full">
-          <thead>
-            <tr>
-              <th className="border p-2">Rank</th>
-              <th className="border p-2">Model</th>
-              <th className="border p-2">FPS</th>
-              <th className="border p-2">Latency</th>
-              <th className="border p-2">Version</th>
-              <th className="border p-2">Hardware</th>
-            </tr>
-          </thead>
+        <div className="overflow-hidden rounded-xl border border-slate-700">
 
-          <tbody>
-            {data.leaderboard.map((item: any) => (
-              <tr key={item.rank}>
-                <td className="border p-2">{item.rank}</td>
-                <td className="border p-2">{item.model}</td>
-                <td className="border p-2">{item.best_fps}</td>
-                <td className="border p-2">{item.latency}</td>
-                <td className="border p-2">{item.version}</td>
-                <td className="border p-2">{item.hardware}</td>
+          <table className="w-full">
+
+            <thead className="bg-slate-900">
+
+              <tr>
+
+                <th className="p-4 text-left">Rank</th>
+                <th className="p-4 text-left">Model</th>
+                <th className="p-4 text-left">Version</th>
+                <th className="p-4 text-left">Hardware</th>
+                <th className="p-4 text-left"> Best FPS</th>
+                <th className="p-4 text-left">Latency</th>
+
               </tr>
-            ))}
-          </tbody>
-        </table>
+
+            </thead>
+
+            <tbody>
+
+              {leaderboard.map((item) => (
+
+                <tr
+                  key={item.rank}
+                  className="border-t border-slate-700 hover:bg-slate-900 transition"
+                >
+
+                  <td className="p-4 font-bold text-yellow-400">
+                    #{item.rank}
+                  </td>
+
+                  <td className="p-4">
+                    {item.model}
+                  </td>
+
+                  <td className="p-4">
+                    {item.version}
+                  </td>
+
+                  <td className="p-4">
+                    {item.hardware}
+                  </td>
+
+                  <td className="p-4 text-green-400 font-semibold">
+                    {Number(item.best_fps).toFixed(2)}
+                  </td>
+
+                  <td className="p-4 text-cyan-400">
+                    {Number(item.latency).toFixed(2)} ms
+                  </td>
+
+                </tr>
+
+              ))}
+
+            </tbody>
+
+          </table>
+
+        </div>
       )}
-    </div>
+
+    </main>
   );
 }

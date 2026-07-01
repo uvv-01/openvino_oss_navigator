@@ -1,47 +1,46 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { exportBenchmarks } from "@/libs/api";
 
 export default function ExportPage() {
-  const [benchmarks, setBenchmarks] = useState<any[]>([]);
+  const downloadJSON = async () => {
+    const data = await exportBenchmarks();
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:8001/benchmark/export")
-      .then((response) => response.json())
-      .then((data) => {
-        setBenchmarks(data);
-      });
-  }, []);
+    const blob = new Blob(
+      [JSON.stringify(data, null, 2)],
+      {
+        type: "application/json",
+      }
+    );
+
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "openvino_benchmarks.json";
+    a.click();
+
+    window.URL.revokeObjectURL(url);
+  };
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">
+    <main className="min-h-screen bg-slate-950 text-white p-10">
+
+      <h1 className="text-4xl font-bold">
         Export Benchmarks
       </h1>
 
-      <table className="border-collapse border border-gray-300 w-full">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border p-3">Model</th>
-            <th className="border p-3">Version</th>
-            <th className="border p-3">Hardware</th>
-            <th className="border p-3">FPS</th>
-            <th className="border p-3">Latency</th>
-          </tr>
-        </thead>
+      <p className="text-gray-400 mt-2 mb-8">
+        Download all benchmark data in JSON format.
+      </p>
 
-        <tbody>
-          {benchmarks.map((item, index) => (
-            <tr key={index}>
-              <td className="border p-3">{item.model}</td>
-              <td className="border p-3">{item.version}</td>
-              <td className="border p-3">{item.hardware}</td>
-              <td className="border p-3">{item.fps}</td>
-              <td className="border p-3">{item.latency}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+      <button
+        onClick={downloadJSON}
+        className="bg-cyan-600 hover:bg-cyan-700 px-6 py-3 rounded-lg font-semibold transition"
+      >
+        Download JSON
+      </button>
+
+    </main>
   );
 }

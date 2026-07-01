@@ -8,11 +8,13 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 
 type Trend = {
   version: string;
   fps: number;
+  latency: number;
 };
 
 export default function PerformanceChart({
@@ -21,27 +23,41 @@ export default function PerformanceChart({
   data: Trend[];
 }) {
   return (
-    <div className="bg-slate-800 rounded-xl p-6 mt-10">
+    <div className="bg-slate-900 rounded-xl border border-slate-700 p-6">
 
       <h2 className="text-2xl font-bold mb-6">
-        📈 FPS Trend
+        Performance Trend
       </h2>
 
-      <ResponsiveContainer width="100%" height={350}>
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data}>
 
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
 
-          <XAxis dataKey="version" />
+          <XAxis
+            dataKey="version"
+            stroke="#94a3b8"
+          />
 
-          <YAxis />
+          <YAxis stroke="#94a3b8" />
 
           <Tooltip />
+
+          <Legend />
 
           <Line
             type="monotone"
             dataKey="fps"
-            stroke="#22d3ee"
+            name="FPS"
+            stroke="#22c55e"
+            strokeWidth={3}
+          />
+
+          <Line
+            type="monotone"
+            dataKey="latency"
+            name="Latency"
+            stroke="#3b82f6"
             strokeWidth={3}
           />
 

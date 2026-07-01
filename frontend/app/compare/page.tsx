@@ -7,7 +7,7 @@ export default function ComparePage() {
 
   async function compareVersions() {
     const response = await fetch(
-      "http://127.0.0.1:8001/benchmark/version-compare",
+      "http://127.0.0.1:8000/benchmark/models",
       {
         method: "POST",
         headers: {
