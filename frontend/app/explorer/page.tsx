@@ -22,32 +22,24 @@ export default function ExplorerPage() {
 
   const [benchmark, setBenchmark] = useState<any>(null);
 
-  // Load Models
   useEffect(() => {
     getModels()
       .then((data) => setModels(data.models || []))
       .catch(console.error);
   }, []);
 
-  // Load Versions
   useEffect(() => {
     if (!selectedModel) return;
 
     getVersions(selectedModel)
       .then((data) => setVersions(data.versions || []))
       .catch(console.error);
-  }, [selectedModel]);
-
-  // Load Hardware
-  useEffect(() => {
-    if (!selectedModel) return;
 
     getHardware(selectedModel)
       .then((data) => setHardware(data.hardware || []))
       .catch(console.error);
   }, [selectedModel]);
 
-  // Load Benchmark
   const loadBenchmark = async () => {
     const data = await getBenchmark(
       selectedModel,
@@ -64,144 +56,181 @@ export default function ExplorerPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white p-10">
 
-      <h1 className="text-4xl font-bold">
-        Benchmark Explorer
-      </h1>
+      <div className="max-w-7xl mx-auto">
 
-      <p className="text-gray-400 mt-2 mb-8">
-        Explore benchmark performance for any model,
-        hardware and OpenVINO version.
-      </p>
+        <div className="mb-12">
 
-      {/* Model */}
+          <h1 className="text-5xl font-extrabold">
+            Benchmark Explorer
+          </h1>
 
-      <div className="mb-6">
-        <label className="block mb-2 font-semibold">
-          Select Model
-        </label>
-
-        <select
-          className="w-full max-w-md rounded-lg border border-slate-700 bg-slate-900 p-3"
-          value={selectedModel}
-          onChange={(e) => {
-            setSelectedModel(e.target.value);
-            setSelectedVersion("");
-            setSelectedHardware("");
-            setBenchmark(null);
-          }}
-        >
-          <option value="">Choose Model</option>
-
-          {models.map((model) => (
-            <option key={model} value={model}>
-              {model}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Version */}
-
-      {selectedModel && (
-        <div className="mb-6">
-          <label className="block mb-2 font-semibold">
-            Select Version
-          </label>
-
-          <select
-            className="w-full max-w-md rounded-lg border border-slate-700 bg-slate-900 p-3"
-            value={selectedVersion}
-            onChange={(e) => {
-              setSelectedVersion(e.target.value);
-              setBenchmark(null);
-            }}
-          >
-            <option value="">Choose Version</option>
-
-            {versions.map((version) => (
-              <option key={version} value={version}>
-                {version}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
-
-      {/* Hardware */}
-
-      {selectedVersion && (
-        <div className="mb-6">
-          <label className="block mb-2 font-semibold">
-            Select Hardware
-          </label>
-
-          <select
-            className="w-full max-w-md rounded-lg border border-slate-700 bg-slate-900 p-3"
-            value={selectedHardware}
-            onChange={(e) => {
-              setSelectedHardware(e.target.value);
-              setBenchmark(null);
-            }}
-          >
-            <option value="">Choose Hardware</option>
-
-            {hardware.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
-
-      {/* Button */}
-
-      {selectedHardware && (
-        <button
-          onClick={loadBenchmark}
-          className="rounded-lg bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-700 transition"
-        >
-          Show Benchmark
-        </button>
-      )}
-
-      {/* Current Selection */}
-
-      {selectedModel && (
-        <div className="mt-8 rounded-xl border border-slate-700 bg-slate-900 p-5 max-w-xl">
-
-          <h2 className="font-semibold mb-3">
-            Current Selection
-          </h2>
-
-          <p>
-            <strong>Model:</strong> {selectedModel}
+          <p className="mt-4 max-w-3xl text-lg text-slate-300 leading-8">
+            Search benchmark results across AI models, OpenVINO releases and
+            supported hardware platforms.
           </p>
 
-          {selectedVersion && (
-            <p>
-              <strong>Version:</strong> {selectedVersion}
-            </p>
-          )}
+        </div>
 
-          {selectedHardware && (
-            <p>
-              <strong>Hardware:</strong> {selectedHardware}
-            </p>
-          )}
+        <div className="grid lg:grid-cols-2 gap-6">
+
+          <div>
+
+            <label className="block mb-2 font-semibold">
+              Model
+            </label>
+
+            <select
+              className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 focus:border-cyan-400 focus:outline-none"
+              value={selectedModel}
+              onChange={(e) => {
+                setSelectedModel(e.target.value);
+                setSelectedVersion("");
+                setSelectedHardware("");
+                setBenchmark(null);
+              }}
+            >
+              <option value="">Choose Model</option>
+
+              {models.map((model) => (
+                <option key={model} value={model}>
+                  {model}
+                </option>
+              ))}
+            </select>
+
+          </div>
+
+          <div>
+
+            <label className="block mb-2 font-semibold">
+              OpenVINO Version
+            </label>
+
+            <select
+              className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 focus:border-cyan-400 focus:outline-none"
+              value={selectedVersion}
+              onChange={(e) => {
+                setSelectedVersion(e.target.value);
+                setBenchmark(null);
+              }}
+              disabled={!selectedModel}
+            >
+              <option value="">Choose Version</option>
+
+              {versions.map((version) => (
+                <option key={version} value={version}>
+                  {version}
+                </option>
+              ))}
+            </select>
+
+          </div>
+
+          <div>
+
+            <label className="block mb-2 font-semibold">
+              Hardware
+            </label>
+
+            <select
+              className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 focus:border-cyan-400 focus:outline-none"
+              value={selectedHardware}
+              onChange={(e) => {
+                setSelectedHardware(e.target.value);
+                setBenchmark(null);
+              }}
+              disabled={!selectedVersion}
+            >
+              <option value="">Choose Hardware</option>
+
+              {hardware.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+
+          </div>
+
+          <div className="flex items-end">
+
+            <button
+              onClick={loadBenchmark}
+              disabled={!selectedHardware}
+              className="w-full rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black hover:bg-cyan-400 transition disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400"
+            >
+              🔍 Search Benchmark
+            </button>
+
+          </div>
 
         </div>
-      )}
 
-      {/* Benchmark Card */}
+        {selectedModel && (
 
-      {benchmark && (
-        <div className="mt-10">
-          <BenchmarkCard benchmark={benchmark} />
-        </div>
-      )}
+          <div className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/70 backdrop-blur-md p-6">
+
+            <h2 className="text-xl font-bold mb-5">
+              Current Selection
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-6">
+
+              <div>
+
+                <p className="text-sm text-slate-400">
+                  Model
+                </p>
+
+                <p className="mt-1 font-semibold">
+                  {selectedModel}
+                </p>
+
+              </div>
+
+              <div>
+
+                <p className="text-sm text-slate-400">
+                  Version
+                </p>
+
+                <p className="mt-1 font-semibold">
+                  {selectedVersion || "-"}
+                </p>
+
+              </div>
+
+              <div>
+
+                <p className="text-sm text-slate-400">
+                  Hardware
+                </p>
+
+                <p className="mt-1 font-semibold">
+                  {selectedHardware || "-"}
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        )}
+
+        {benchmark && (
+
+          <div className="mt-12">
+
+            <BenchmarkCard benchmark={benchmark} />
+
+          </div>
+
+        )}
+
+      </div>
 
     </main>
   );

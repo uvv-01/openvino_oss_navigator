@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Trophy } from "lucide-react";
+
 import {
   getModels,
   compareModels as compareModelsAPI,
@@ -8,19 +10,15 @@ import {
 
 export default function ModelsComparisonPage() {
   const [models, setModels] = useState<string[]>([]);
-
   const [model1, setModel1] = useState("");
   const [model2, setModel2] = useState("");
-
   const [comparison, setComparison] = useState<any>(null);
 
   useEffect(() => {
-  getModels()
-    .then((data) => {
-      setModels(data.models || []);
-    })
-    .catch(console.error);
-}, []);
+    getModels()
+      .then((data) => setModels(data.models || []))
+      .catch(console.error);
+  }, []);
 
   const compareModels = async () => {
     if (!model1 || !model2) {
@@ -30,132 +28,192 @@ export default function ModelsComparisonPage() {
 
     const data = await compareModelsAPI(model1, model2);
 
-      if (data.success) {
-       setComparison(data);
-       } else {
-        alert(data.message);
-        }
-
     if (data.success) {
       setComparison(data);
     } else {
-      alert("Comparison failed.");
+      alert(data.message || "Comparison failed.");
     }
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">
-        Models Comparison
-      </h1>
+    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white p-10">
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="max-w-7xl mx-auto">
 
-        <div>
-          <label className="block mb-2 font-semibold">
-            Model 1
-          </label>
+        <div className="mb-12">
 
-          <select
-            className="border rounded p-2 w-full"
-            value={model1}
-            onChange={(e) => setModel1(e.target.value)}
-          >
-            <option value="">Choose Model</option>
+          <h1 className="text-5xl font-extrabold">
+            Model Comparison
+          </h1>
 
-            {models.map((model) => (
-              <option key={model} value={model}>
-                {model}
-              </option>
-            ))}
-          </select>
+          <p className="mt-4 max-w-3xl text-lg text-slate-300 leading-8">
+            Compare the benchmark performance of two AI models across all
+            available OpenVINO benchmark results.
+          </p>
+
         </div>
 
-        <div>
-          <label className="block mb-2 font-semibold">
-            Model 2
-          </label>
+        <div className="grid lg:grid-cols-2 gap-6">
 
-          <select
-            className="border rounded p-2 w-full"
-            value={model2}
-            onChange={(e) => setModel2(e.target.value)}
-          >
-            <option value="">Choose Model</option>
+          <div>
 
-            {models.map((model) => (
-              <option key={model} value={model}>
-                {model}
-              </option>
-            ))}
-          </select>
-        </div>
+            <label className="block mb-2 font-semibold">
+              Model 1
+            </label>
 
-      </div>
+            <select
+              className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 focus:border-cyan-400 focus:outline-none"
+              value={model1}
+              onChange={(e) => setModel1(e.target.value)}
+            >
+              <option value="">Choose Model</option>
 
-      <button
-        onClick={compareModels}
-        className="mt-6 bg-blue-600 text-white px-5 py-2 rounded"
-      >
-        Compare Models
-      </button>
+              {models.map((model) => (
+                <option key={model} value={model}>
+                  {model}
+                </option>
+              ))}
 
-      {comparison && (
-        <div className="mt-8 border rounded-lg p-6 shadow">
+            </select>
 
-          <h2 className="text-2xl font-bold mb-4">
-            Comparison Result
-          </h2>
+          </div>
 
-          <table className="table-auto border-collapse border w-full">
+          <div>
 
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border p-2">Metric</th>
-                <th className="border p-2">{comparison.model1.name}</th>
-                <th className="border p-2">{comparison.model2.name}</th>
-              </tr>
-            </thead>
+            <label className="block mb-2 font-semibold">
+              Model 2
+            </label>
 
-            <tbody>
-              <tr>
-                <td className="border p-2 font-semibold">
-                  Best FPS
-                </td>
+            <select
+              className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 focus:border-cyan-400 focus:outline-none"
+              value={model2}
+              onChange={(e) => setModel2(e.target.value)}
+            >
+              <option value="">Choose Model</option>
 
-                <td className="border p-2">
-                  {comparison.model1.best_fps}
-                </td>
+              {models.map((model) => (
+                <option key={model} value={model}>
+                  {model}
+                </option>
+              ))}
 
-                <td className="border p-2">
-                  {comparison.model2.best_fps}
-                </td>
-              </tr>
+            </select>
 
-              <tr>
-                <td className="border p-2 font-semibold">
-                  Latency
-                </td>
-
-                <td className="border p-2">
-                  {comparison.model1.latency}
-                </td>
-
-                <td className="border p-2">
-                  {comparison.model2.latency}
-                </td>
-              </tr>
-
-            </tbody>
-
-          </table>
-
-          <div className="mt-6 text-xl font-bold text-green-600">
-            Winner: {comparison.winner}
           </div>
 
         </div>
-      )}
-    </div>
+
+        <button
+          onClick={compareModels}
+          className="mt-8 rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black hover:bg-cyan-400 transition"
+        >
+          Compare Models
+        </button>
+
+        {comparison && (
+
+          <div className="mt-12">
+
+            <h2 className="text-3xl font-bold mb-8">
+              Comparison Result
+            </h2>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+
+              <div className="rounded-2xl border border-slate-700 bg-slate-900/70 backdrop-blur-md p-8">
+
+                <h3 className="text-2xl font-bold mb-6">
+                  {comparison.model1.name}
+                </h3>
+
+                <div className="space-y-5">
+
+                  <div>
+                    <p className="text-slate-400 text-sm">
+                      Best FPS
+                    </p>
+
+                    <p className="text-4xl font-bold text-green-400">
+                      {Number(comparison.model1.best_fps).toFixed(2)}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-slate-400 text-sm">
+                      Latency
+                    </p>
+
+                    <p className="text-3xl font-bold text-cyan-400">
+                      {Number(comparison.model1.latency).toFixed(2)} ms
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div className="rounded-2xl border border-slate-700 bg-slate-900/70 backdrop-blur-md p-8">
+
+                <h3 className="text-2xl font-bold mb-6">
+                  {comparison.model2.name}
+                </h3>
+
+                <div className="space-y-5">
+
+                  <div>
+                    <p className="text-slate-400 text-sm">
+                      Best FPS
+                    </p>
+
+                    <p className="text-4xl font-bold text-green-400">
+                      {Number(comparison.model2.best_fps).toFixed(2)}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-slate-400 text-sm">
+                      Latency
+                    </p>
+
+                    <p className="text-3xl font-bold text-cyan-400">
+                      {Number(comparison.model2.latency).toFixed(2)} ms
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div className="mt-10 rounded-2xl border border-yellow-500/40 bg-yellow-500/10 p-6">
+
+              <div className="flex items-center gap-3">
+
+                <Trophy className="text-yellow-400" size={30} />
+
+                <div>
+
+                  <p className="text-sm text-slate-300">
+                    Best Performing Model
+                  </p>
+
+                  <h3 className="text-3xl font-bold text-yellow-400">
+                    {comparison.winner}
+                  </h3>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        )}
+
+      </div>
+
+    </main>
   );
 }

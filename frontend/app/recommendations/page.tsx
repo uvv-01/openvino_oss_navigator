@@ -4,92 +4,155 @@ import { useEffect, useState } from "react";
 import { getModels, getRecommendation } from "@/libs/api";
 
 export default function RecommendationsPage() {
-
   const [models, setModels] = useState<string[]>([]);
   const [selectedModel, setSelectedModel] = useState("");
   const [recommendation, setRecommendation] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getModels().then((data) => {
-      setModels(data.models || []);
-    });
+    async function loadModels() {
+      try {
+        const data = await getModels();
+        setModels(data.models || []);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadModels();
   }, []);
 
   const loadRecommendation = async () => {
-    const data = await getRecommendation(selectedModel);
+    if (!selectedModel) {
+      alert("Please select a model.");
+      return;
+    }
 
-    if (data.success) {
-      setRecommendation(data);
-    } else {
-      alert(data.message);
+    setLoading(true);
+
+    try {
+      const data = await getRecommendation(selectedModel);
+
+      if (data.success) {
+        setRecommendation(data);
+      } else {
+        setRecommendation(null);
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      setRecommendation(null);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
-
+    <main className="min-h-screen bg-slate-950 p-10 text-white">
       <h1 className="text-4xl font-bold">
-        Recommendations
+        Recommendation Engine
       </h1>
 
-      <p className="text-gray-400 mt-2 mb-8">
-        Find the best OpenVINO version for every model.
+      <p className="mt-2 mb-8 text-slate-400">
+        Discover the best OpenVINO version and hardware configuration for maximum performance.
       </p>
 
-      <select
-        className="bg-slate-800 border border-slate-700 rounded-lg p-3 w-full max-w-md"
-        value={selectedModel}
-        onChange={(e) => {
-          setSelectedModel(e.target.value);
-          setRecommendation(null);
-        }}
-      >
-        <option value="">Select Model</option>
+      <div className="max-w-md">
+        <label className="mb-2 block font-semibold">
+          Select Model
+        </label>
 
-        {models.map((model) => (
-          <option key={model} value={model}>
-            {model}
-          </option>
-        ))}
-      </select>
+        <select
+          className="w-full rounded-xl border border-slate-700 bg-slate-900 p-3 text-white focus:border-cyan-500 focus:outline-none"
+          value={selectedModel}
+          onChange={(e) => {
+            setSelectedModel(e.target.value);
+            setRecommendation(null);
+          }}
+        >
+          <option value="">Choose Model</option>
 
-      <button
-        onClick={loadRecommendation}
-        className="mt-6 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg"
-      >
-        Get Recommendation
-      </button>
+          {models.map((model) => (
+            <option key={model} value={model}>
+              {model}
+            </option>
+          ))}
+        </select>
 
-      {recommendation && (
+        <button
+          onClick={loadRecommendation}
+          className="mt-6 w-full rounded-xl bg-blue-600 px-6 py-3 font-semibold transition hover:bg-blue-700"
+        >
+          Get Recommendation
+        </button>
+      </div>
 
-        <div className="mt-10 bg-slate-900 rounded-xl border border-slate-700 p-6">
+      {loading && (
+        <div className="mt-12 text-lg text-slate-400">
+          Generating recommendation...
+        </div>
+      )}
 
-          <h2 className="text-2xl font-bold mb-5">
+      {!loading && !recommendation && (
+        <div className="mt-16 rounded-xl border border-dashed border-slate-700 bg-slate-900 p-12 text-center text-slate-400">
+          Select a model to receive the optimal OpenVINO configuration.
+        </div>
+      )}
+
+      {!loading && recommendation && (
+        <div className="mt-10 rounded-2xl border border-slate-700 bg-slate-900 p-8 shadow-lg">
+          <h2 className="mb-6 text-2xl font-bold">
             Recommended Configuration
           </h2>
 
-          <p><strong>Model:</strong> {recommendation.model}</p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl bg-slate-800 p-5">
+              <p className="text-slate-400">Model</p>
+              <p className="mt-1 text-lg font-semibold">
+                {recommendation.model}
+              </p>
+            </div>
 
-          <p><strong>Version:</strong> {recommendation.recommended_version}</p>
+            <div className="rounded-xl bg-slate-800 p-5">
+              <p className="text-slate-400">Recommended Version</p>
+              <p className="mt-1 text-lg font-semibold">
+                {recommendation.recommended_version}
+              </p>
+            </div>
 
-          <p><strong>Hardware:</strong> {recommendation.recommended_hardware}</p>
+            <div className="rounded-xl bg-slate-800 p-5">
+              <p className="text-slate-400">Hardware</p>
+              <p className="mt-1 text-lg font-semibold">
+                {recommendation.recommended_hardware}
+              </p>
+            </div>
 
-          <p className="text-green-400">
-            <strong>Best FPS:</strong> {Number(recommendation.best_fps).toFixed(2)}
-          </p>
+            <div className="rounded-xl bg-slate-800 p-5">
+              <p className="text-slate-400">Best FPS</p>
+              <p className="mt-1 text-2xl font-bold text-green-400">
+                {Number(recommendation.best_fps).toFixed(2)}
+              </p>
+            </div>
 
-          <p className="text-cyan-400">
-            <strong>Latency:</strong> {Number(recommendation.latency).toFixed(2)} ms
-          </p>
-
-          <div className="mt-5 rounded-lg bg-green-900/20 border border-green-700 p-4">
-            💡 {recommendation.reason}
+            <div className="rounded-xl bg-slate-800 p-5 md:col-span-2">
+              <p className="text-slate-400">Latency</p>
+              <p className="mt-1 text-2xl font-bold text-cyan-400">
+                {Number(recommendation.latency).toFixed(2)} ms
+              </p>
+            </div>
           </div>
 
+          <div className="mt-8 rounded-xl border border-green-700 bg-green-900/20 p-5">
+            <h3 className="mb-2 font-bold text-green-400">
+              Why this recommendation?
+            </h3>
+
+            <p className="text-slate-300">
+              {recommendation.reason}
+            </p>
+          </div>
         </div>
-
       )}
-
     </main>
   );
 }
