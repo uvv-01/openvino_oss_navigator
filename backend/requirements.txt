@@ -5,3 +5,5 @@ python-dotenv==1.0.0
 pydantic==2.5.0
 sqlalchemy==2.0.51 
 python-multipart
+pandas
+openpyxl
