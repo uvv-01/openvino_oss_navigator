@@ -1,1 +1,0 @@
-// Assistant page component
